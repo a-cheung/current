@@ -6,17 +6,15 @@ from bs4 import BeautifulSoup
 
 start = time.clock()
 
-sheet = pd.read_excel("C:/Users/acheung/Desktop/JIRA6012_germany.xlsx", sheetname=1)
-# sheet = pd.read_csv("C:/Users/acheung/Documents/missing_asn/missing_asn_122017.csv")
+# sheet = pd.read_excel("C:/Users/acheung/Desktop/JIRA6012_germany.xlsx", sheetname=1)
+sheet = pd.read_csv("C:/Users/acheung/Desktop/missed_ranges.csv")
 inputs = []
-
-
 
 # for i in list(zip(sheet['OCTS(A.START_IP)'], sheet['NGA'])):
 #    if i[1] == 'AC':
 #        inputs.append(i[0])
-#
-for i in sheet['IP_OCT']:
+
+for i in sheet['start_octs']:
     inputs.append(i)
 
 
@@ -49,17 +47,17 @@ for input in inputs:
 
 
 
-# # export output CHANGE FILE NAME!
-# file_name = 'cymru.csv'
-# f = open(file_name, 'w')
-#
-# header = "input,name\n"
-# f.write(header)
-#
-# for r in results:
-#     f.write("{input},{name}\n".format(input=r['input'], name=r['output']))
-#
-# f.close()
+# export output CHANGE FILE NAME!
+file_name = 'cymru.csv'
+f = open(file_name, 'w')
+
+header = "input,name\n"
+f.write(header)
+
+for r in results:
+    f.write("{input},{name}\n".format(input=r['input'], name=r['output']))
+
+f.close()
 
 
 print("items:{len}".format(len=len(results)))

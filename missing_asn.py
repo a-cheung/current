@@ -44,18 +44,18 @@ for a in asn:
 print ("items: {n}".format(n=len(results)))
 
 
-# #####   export csv CHANGE FILE NAME
-# file_name = 'C:/Users/acheung/Documents/missing_asn/missing_asn_032118.csv'
-# f = open(file_name, 'w')
-#
-# header = "ASN,name\n"
-# f.write(header)
-#
-# for result in results:
-#     row = "{input},{name}\n".format(input=result['input'], name=result['output'])
-#     f.write(row)
-#
-# f.close()
+#####   export csv CHANGE FILE NAME
+file_name = 'C:/Users/acheung/Documents/missing_asn/missing_asn_050218.csv'
+f = open(file_name, 'w')
+
+header = "ASN,name\n"
+f.write(header)
+
+for result in results:
+    row = "{input},{name}\n".format(input=result['input'], name=result['output'])
+    f.write(row)
+
+f.close()
 
 
 end = time.clock()
